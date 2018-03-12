@@ -49,9 +49,7 @@
     "build:prod":
       "webpack --mode production --config config/webpack.config.prod.js",
     "stats": "webpack --profile --json > stats.json",
-    "prepublish": "nsp check",
-    "pretest": "eslint .",
-    "precommit": "lint-staged",
+    "pretest": "nsp check; eslint .; lint-staged",
     "test": "jest"
   },
   "license": "ISC",
