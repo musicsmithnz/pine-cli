@@ -1,5 +1,5 @@
 Arguments: 
-  /home/raymond/.nvm/versions/node/v9.5.0/bin/node /usr/share/yarn/bin/yarn.js install
+  /home/raymond/.nvm/versions/node/v9.5.0/bin/node /usr/share/yarn/bin/yarn.js add -D @lucentray/pine-web-components
 
 PATH: 
   /home/raymond/.nvm/versions/node/v9.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/raymond/.local/bin
@@ -15,23 +15,26 @@ Platform:
 
 npm manifest: 
   {
-    "name": "generator-pine-wc",
+    "name": "generator-pine-cli",
     "version": "0.0.1",
-    "description": "PINE Components. A generator for installing PINE web components and hosting them in a decentralized database. PINE is an acronym for Polymer IPFS Node Express.",
-    "homepage": "https://github.com/musicsmithnz/spinec#readme",
-    "author": "",
-    "files": [
-      "generators"
-    ],
-    "main": "./lib/spine_cli/spinec.js",
+    "description":
+      "PINE Components. A generator for installing PINE web components adding them to an app and hosting them in a decentralized database. PINE is an acronym for Polymer IPFS Node Express.",
+    "homepage": "https://musicsmithnz.github.io/pine-cli",
+    "author": "Raymond Smith",
     "keywords": [
       "yeoman-generator",
-      "yeoman-generator"
+      "PINE-cli",
+      "PINE",
+      "polymer",
+      "IPFS",
+      "node",
+      "express",
+      "web-components"
     ],
     "devDependencies": {
       "@babel/core": "*7.0.0-beta.40",
       "@babel/preset-env": "*7.0.0-beta.40",
-      "@polymer/polymer": "^3.0.0-pre.10",
+      "@polymer/polymer": "^3.0.0-pre.11",
       "@webcomponents/webcomponentsjs": "^1.1.0",
       "babel-loader": "*7.1.4",
       "express": "^4.16.2",
@@ -57,16 +60,13 @@ npm manifest:
     },
     "scripts": {
       "spinec": "node ./lib/spine_cli/spinec.js",
-      "build:dev": "webpack --mode development --config config/webpack.config.dev.js",
-      "build:prod": "webpack --mode production --config config/webpack.config.prod.js",
+      "build:dev":
+        "webpack --mode development --config config/webpack.config.dev.js",
+      "build:prod":
+        "webpack --mode production --config config/webpack.config.prod.js",
       "stats": "webpack --profile --json > stats.json",
-      "prepublish": "nsp check",
-      "pretest": "eslint .",
-      "precommit": "lint-staged",
+      "pretest": "nsp check; eslint .; lint-staged",
       "test": "jest"
-    },
-    "bin": {
-      "spinec": "./lib/pine_cli/pinec.js"
     },
     "license": "ISC",
     "dependencies": {
@@ -85,29 +85,17 @@ npm manifest:
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/musicsmithnz/spinec.git"
-    },
-    "bugs": {
-      "url": "https://github.com/musicsmithnz/spinec/issues"
+      "url": "git+https://github.com/musicsmithnz/pine-cli.git"
     },
     "jest": {
       "testEnvironment": "node"
     },
     "lint-staged": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "*.json": [
-        "prettier --write",
-        "git add"
-      ]
+      "*.js": ["eslint --fix", "git add"],
+      "*.json": ["prettier --write", "git add"]
     },
     "eslintConfig": {
-      "extends": [
-        "xo",
-        "prettier"
-      ],
+      "extends": ["xo", "prettier"],
       "env": {
         "jest": true,
         "node": true
@@ -121,9 +109,7 @@ npm manifest:
           }
         ]
       },
-      "plugins": [
-        "prettier"
-      ]
+      "plugins": ["prettier"]
     }
   }
 
@@ -9062,16 +9048,7 @@ Lockfile:
       wrap-ansi "^2.0.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c nsp check
-  Directory: /home/raymond/dev/pine/generator-pine-wc
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/share/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/share/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/share/yarn/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:160:13)
-      at maybeClose (internal/child_process.js:943:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com:443
+      at Object._errnoException (util.js:1003:13)
+      at errnoException (dns.js:60:15)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:97:26)

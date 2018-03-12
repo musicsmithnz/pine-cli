@@ -1,8 +1,7 @@
 {
   "name": "generator-pine-cli",
   "version": "0.0.1",
-  "description":
-    "PINE Components. A generator for installing PINE web components adding them to an app and hosting them in a decentralized database. PINE is an acronym for Polymer IPFS Node Express.",
+  "description": "PINE Components. A generator for installing PINE web components adding them to an app and hosting them in a decentralized database. PINE is an acronym for Polymer IPFS Node Express.",
   "homepage": "https://musicsmithnz.github.io/pine-cli",
   "author": "Raymond Smith",
   "keywords": [
@@ -21,33 +20,31 @@
     "@polymer/polymer": "^3.0.0-pre.11",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "babel-loader": "*7.1.4",
+    "eslint": "^4.1.0",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-config-xo": "^0.18.2",
+    "eslint-plugin-prettier": "^2.2.0",
     "express": "^4.16.2",
     "html-webpack-plugin": "^3.0.6",
+    "husky": "^0.14.3",
+    "jest": "^22.0.6",
     "js-yaml": "^3.10.0",
+    "lint-staged": "^4.2.1",
+    "nsp": "^2.6.3",
+    "prettier": "^1.7.0",
     "request": "^2.83.0",
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4",
     "webpack": "^4.1.0",
     "webpack-cli": "^2.0.10",
-    "yo": "^2.0.1",
-    "yeoman-test": "^1.7.0",
     "yeoman-assert": "^3.1.0",
-    "nsp": "^2.6.3",
-    "eslint": "^4.1.0",
-    "prettier": "^1.7.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.2.1",
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-prettier": "^2.2.0",
-    "eslint-config-xo": "^0.18.2",
-    "jest": "^22.0.6"
+    "yeoman-test": "^1.7.0",
+    "yo": "^2.0.1"
   },
   "scripts": {
     "spinec": "node ./lib/spine_cli/spinec.js",
-    "build:dev":
-      "webpack --mode development --config config/webpack.config.dev.js",
-    "build:prod":
-      "webpack --mode production --config config/webpack.config.prod.js",
+    "build:dev": "webpack --mode development --config config/webpack.config.dev.js",
+    "build:prod": "webpack --mode production --config config/webpack.config.prod.js",
     "stats": "webpack --profile --json > stats.json",
     "pretest": "nsp check; eslint .; lint-staged",
     "test": "jest"
@@ -75,11 +72,20 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
@@ -93,6 +99,8 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   }
 }

@@ -17,49 +17,20 @@ module.exports = class extends Generator {
     const prompts = [
       {
         type: 'input',
-        name: 'app_name',
-        message: 'please enter the name of your app',
-        default: this.config.get('app_name') || 'App made with PINE Web Components',
+        name: 'component_name',
+        message: 'enter the component name',
+        default: this.config.get('component_name') || 'materialize-panel',
         store: true
-      },
-      {
-        type: 'checkbox',
-        name: 'component_libs',
-        message: 'Which Component libraries would you like to include?',
-        choices: [
-          {
-            name: 'polymer-web-components',
-            value: 'polymer-web-components',
-            checked: true
-          },
-          {
-            name: 'materialize-web-components',
-            value: 'materialize-web-components',
-            checked: true
-          },
-          {
-            name: 'lucent-web-components',
-            value: 'lucent-web-components',
-            checked: true
-          },
-          {
-            name: 'vaadin-web-components',
-            value: 'vaadin-web-components',
-            checked: true
-          }
-        ]
       }
     ];
 
     return this.prompt(prompts).then(answers => {
-      this.config.set('app_name', answers.app_name);
+      this.config.set('component_name', answers.component_name);
       this.config.save();
     });
   }
 
   writing() {
-    this.fs.copy(this.templatePath('./config'), this.destinationPath('./config'));
-    this.fs.copy(this.templatePath('./.gitignore'), this.destinationPath('./.gitignore'));
     this.fs.copy(
       this.templatePath('./package.json'),
       this.destinationPath('./package.json')
