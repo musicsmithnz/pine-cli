@@ -1,13 +1,21 @@
 {
-  "name": "generator-pine-wc",
+  "name": "google-generic",
   "version": "0.0.1",
-  "description":
-    "PINE Components. A generator for installing PINE web components and hosting them in a decentralized database. PINE is an acronym for Polymer IPFS Node Express.",
+  "description": "a generic google styled web app with a side drawer",
   "homepage": "https://github.com/musicsmithnz/spinec#readme",
   "author": "",
-  "files": ["generators"],
-  "main": "./lib/spine_cli/spinec.js",
-  "keywords": ["yeoman-generator", "yeoman-generator"],
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "PINE",
+    "Web Components",
+    "Polymer",
+    "IPFS",
+    "Node",
+    "Express",
+    "template"
+  ],
   "devDependencies": {
     "@babel/core": "*7.0.0-beta.40",
     "@babel/preset-env": "*7.0.0-beta.40",
@@ -36,10 +44,8 @@
     "yo": "^2.0.1"
   },
   "scripts": {
-    "build:dev":
-      "webpack --mode development --config config/webpack.config.dev.js",
-    "build:prod":
-      "webpack --mode production --config config/webpack.config.prod.js",
+    "build:dev": "webpack --mode development --config config/webpack.config.dev.js",
+    "build:prod": "webpack --mode production --config config/webpack.config.prod.js",
     "stats": "webpack --profile --json > stats.json",
     "prepublish": "nsp check",
     "pretest": "eslint .",
@@ -51,7 +57,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@lucentray/pine-web-components": "^0.0.3",
+    "@lucentray/pine-web-components": "latest",
     "@polymer/app-layout": "^3.0.0-pre.11",
     "@polymer/iron-icons": "^3.0.0-pre.11",
     "@polymer/iron-iconset-svg": "^3.0.0-pre.11",
@@ -91,11 +97,20 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
@@ -109,6 +124,8 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   }
 }

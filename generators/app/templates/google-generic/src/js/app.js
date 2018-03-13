@@ -5,13 +5,13 @@
 import '../../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js'
 import '../../node_modules/browser-es-module-loader/dist/babel-browser-build.js'
 import '../../node_modules/browser-es-module-loader/dist/browser-es-module-loader.js'
+import '../data/articles.js'
 
-
-import { MaterializeColumn }    from '../../node_modules/@lucentray/pine-web-components/components/materialize-column/component.js'
-import { MaterializeNavbar }    from '../../node_modules/@lucentray/pine-web-components/components/materialize-navbar/component.js'
-import { MaterializePanel }     from '../../node_modules/@lucentray/pine-web-components/components/materialize-panel/component.js'
-import { MaterializeAccordion } from '../../node_modules/@lucentray/pine-web-components/components/materialize-accordion/component.js'
-import { MaterializeFooter }    from '../../node_modules/@lucentray/pine-web-components/components/materialize-footer/component.js'
+import { MaterializeColumn }    from '../../node_modules/@lucentray/pine-web-components/materialize-column.js'
+import { MaterializeNavbar }    from '../../node_modules/@lucentray/pine-web-components/materialize-navbar.js'
+import { MaterializePanel }     from '../../node_modules/@lucentray/pine-web-components/materialize-panel.js'
+import { MaterializeAccordion } from '../../node_modules/@lucentray/pine-web-components/materialize-accordion.js'
+import { MaterializeFooter }    from '../../node_modules/@lucentray/pine-web-components/materialize-footer.js'
 
 
 import { PaperButton }          from '../../node_modules/@polymer/paper-button/paper-button.js'
@@ -29,6 +29,8 @@ import { AppHeaderLayout }      from '../../node_modules/@polymer/app-layout/app
 import { AppToolbar }           from '../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js'
 import { AppBox }               from '../../node_modules/@polymer/app-layout/app-box/app-box.js'
 import { IronIcons }             from '../../node_modules/@polymer/iron-icons/iron-icons.js'
+import '../../node_modules/@lucentray/pine-web-components/polymer-elements.js'
+import '../../node_modules/@lucentray/pine-web-components/app-elements.js'
 
 import { PaperItem }             from '../../node_modules/@polymer/paper-item/paper-item.js'
 import { PaperIconButton }             from '../../node_modules/@polymer/paper-icon-button/paper-icon-button.js'
