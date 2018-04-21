@@ -31,7 +31,8 @@ module.exports = class extends Generator {
                 choices: [
                     "google-generic",
                     "homepage",
-                    "start-bootstrap-new-age"
+                    "start-bootstrap-new-age",
+                    "lucent-upload"
                 ]
             },
             {

@@ -17,7 +17,6 @@
   "devDependencies": {
     "@babel/core": "*7.0.0-beta.40",
     "@babel/preset-env": "*7.0.0-beta.40",
-    "@polymer/polymer": "^3.0.0-pre.11",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "babel-loader": "*7.1.4",
     "eslint": "^4.1.0",
@@ -51,6 +50,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.12",
     "chai": "^4.1.2",
     "chalk": "^2.1.0",
     "fs-extra": "^5.0.0",
